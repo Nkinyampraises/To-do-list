@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>To-Do List App</title>
+  <link rel="stylesheet" href="To-do-list.css"href="To-do-list.js">
+</head>
+<body>
+  <!-- Main Container -->
+  <div class="app-container">
+    <!-- Header with Icons -->
+    <header>
+      <span class="icon" id="menu-icon" onclick="toggleMenu()">☰</span>
+      <h1>To-Do List</h1>
+      <span class="icon" id="search-icon" onclick="toggleSearch()">🔍</span>
+      <span class="icon" id="add-icon" onclick="openAddTaskPage()">➕</span>
+    </header>
+
+    <!-- Sidebar Menu (Hidden initially) -->
+    <div class="sidebar-menu" id="sidebar-menu">
+      <ul>
+        <li onclick="addBatchMode()">Add in Batch Mode</li>
+        <li onclick="removeAds()">Remove Ads</li>
+        <li onclick="sendFeedback()">Send Feedback</li>
+        <li onclick="followUs()">Follow Us</li>
+        <li onclick="inviteFriends()">Invite Friends</li>
+        <li onclick="openSettings()">Settings</li>
+      </ul>
+    </div>
+
+    <!-- Search Bar (Hidden initially) -->
+    <div class="search-container" id="search-container">
+      <input type="text" id="search-input" placeholder="Search tasks..." oninput="searchTasks()">
+    </div>
+
+    <!-- Task List -->
+    <ul id="task-list" class="task-list"></ul>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

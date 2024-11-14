@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>New Task</title>
+  <link rel="stylesheet" href="New Task.css">
+</head>
+<body>
+  <div class="app-container">
+    <header>
+      <h1>New Task</h1>
+      <button onclick="goBack()">← Back</button>
+    </header>
+
+    <!-- Task Form -->
+    <div class="task-form">
+      <label for="task-desc">What is to be done?</label>
+      <textarea id="task-desc" placeholder="Describe your task here..."></textarea>
+      
+      <!-- Voice Message Icon -->
+      <label>Voice Message</label>
+      <button id="record-voice" onclick="recordVoice()" class="voice-icon">🎤</button>
+
+      <!-- Due Date -->
+      <label for="due-date">Due Date:</label>
+      <input type="date" id="due-date">
+
+      <!-- Notification Toggle -->
+      <label for="notification">Enable Notification:</label>
+      <input type="checkbox" id="notification">
+
+      <!-- Add to List Dropdown -->
+      <label for="task-list">Add to List:</label>
+      <select id="task-list" onchange="showNewListInput()">
+        <option value="personal">Personal</option>
+        <option value="work">Work</option>
+        <option value="shopping">Shopping</option>
+        <option value="add-new">+ Add New List</option>
+      </select>
+
+      <!-- Add New List Section (Hidden initially) -->
+      <div id="new-list-container" style="display: none;">
+        <label for="new-list-name">New List Name:</label>
+        <input type="text" id="new-list-name" placeholder="Enter new list name">
+        <button onclick="addNewList()">Add</button>
+        <button onclick="cancelNewList()">Cancel</button>
+      </div>
+
+      <!-- Save Button -->
+      <button onclick="saveTask()">Save Task</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
